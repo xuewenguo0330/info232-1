@@ -20,6 +20,7 @@ def answer_01(data):
     """
     # TODO : standardize data
     scaled_data = data
+    scaled_data.iloc[:,:-1]=(data.iloc[:,:-1]-data.iloc[:,:-1].mean())/data.iloc[:,:-1].std()
     return scaled_data
 
 
@@ -32,9 +33,8 @@ def answer_02():
         nearest_neighbors class
     """
     # Wrong classifier
-    from sklearn.naive_bayes import GaussianNB
-
-    return GaussianNB
+from sklearn.neighbors import NearestNeighbors
+    return NearestNeighbors()
 
 
 def answer_03():
@@ -47,8 +47,8 @@ def answer_03():
     Returns
     -------
     """
-    from sklearn.metrics import accuracy_score as sklearn_metric
-    return sklearn_metric
+    from sklearn.metrics import balanced_accuracy_score
+    return balanced_accuracy_score
 
 
 def answer_04():
@@ -64,7 +64,7 @@ def answer_04():
     YES = 'YES'
     NO = 'NO'
     # Return YES or NO
-    return None
+    return NO
 
 
 def answer_05():
@@ -80,7 +80,7 @@ def answer_05():
     CASE3 = "CS"
     CASE4 = "CROP"
     # Return CASE1, CASE2, CASE3 or CASE4
-    return None
+    return CS
 
 
 
@@ -92,7 +92,7 @@ def answer_06():
     under_fitting = "under-fitting"
     over_fitting  = "over-fitting"
     # Return under_fitting or over_fitting
-    return None
+    return over-fitting
 
 
 def answer_07():
@@ -102,7 +102,7 @@ def answer_07():
     under_fitting = "under-fitting"
     over_fitting  = "over-fitting"
     # Return under_fitting or over_fitting
-    return None
+    return under_fitting
 
 
 def answer_08():
@@ -113,7 +113,7 @@ def answer_08():
          "Decision Tree", "Random Forest", "Neural Net", "AdaBoost",
          "Naive Bayes", "QDA"]
 
-    overfitting_models = ["Replace", "with", "model", "names", "from", "the",  "list", "above"]
+    overfitting_models = ["RBF SVM", "Decision Tree","Random Forest"]
     return overfitting_models
 
 
@@ -125,7 +125,7 @@ def answer_09():
          "Decision Tree", "Random Forest", "Neural Net", "AdaBoost",
          "Naive Bayes", "QDA"]
 
-    underfitting_models = ["Replace", "with", "model", "names", "from", "the", "list", "above"]
+    underfitting_models = [ "Linear SVM", "Naive Bayes"]
     return underfitting_models
 
 
